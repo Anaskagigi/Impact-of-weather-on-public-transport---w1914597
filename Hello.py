@@ -199,7 +199,7 @@ else:
         
         # Feedback Section
         st.subheader('Feedback')
-        st.write("Your feedback is valuable! Please provide any comments or suggestions below.")
-        feedback = st.text_area("Your Feedback")
+       # st.write("Your feedback is valuable! Please provide any comments or suggestions below.")
+      #  feedback = st.text_area("Your Feedback")
         if st.button("Submit Feedback"):
             st.write("Thank you for your feedback!")
