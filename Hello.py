@@ -7,8 +7,13 @@ st.set_page_config(page_title="Weather & Public Transport Analysis", layout="wid
 
 # Load data with caching for performance optimization
 @st.cache_data
-df = pd.read_csv('data/5_Years_Weather_Impact_on_Public_Transport.csv')
+def load_data():
+    df = pd.read_csv('data/5_Years_Weather_Impact_on_Public_Transport.csv')
+    df['Date'] = pd.to_datetime(df['Date'])  # Ensure Date column is in datetime format
+    df.fillna(0, inplace=True)  # Handle missing values
+    return df
 
+# Load the data
 df = load_data()
 
 # Sidebar Filters
